@@ -1,0 +1,297 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 1,
+        "city": "Tokyo",
+        "location": "Narita Airport",
+        "activity": "Arrival",
+        "time": "09:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [140.3864, 35.7647]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 1,
+        "city": "Tokyo",
+        "location": "Shibuya",
+        "activity": "Check-in & Exploration",
+        "time": "13:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7004, 35.6595]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 1,
+        "city": "Tokyo",
+        "location": "Shibuya Sky",
+        "activity": "Observatory",
+        "time": "18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7013, 35.6585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 2,
+        "city": "Tokyo",
+        "location": "Senso-ji Temple",
+        "activity": "Temple Visit",
+        "time": "09:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7967, 35.7148]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 2,
+        "city": "Tokyo",
+        "location": "Ueno Park",
+        "activity": "Museums & Park",
+        "time": "13:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7743, 35.7148]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 2,
+        "city": "Tokyo",
+        "location": "Akihabara",
+        "activity": "Electric Town",
+        "time": "18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7745, 35.7022]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 3,
+        "city": "Tokyo",
+        "location": "Meiji Shrine",
+        "activity": "Shrine & Park",
+        "time": "09:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.6993, 35.6762]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 3,
+        "city": "Tokyo",
+        "location": "Odaiba - TeamLab",
+        "activity": "Digital Art Museum",
+        "time": "13:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7750, 35.6249]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 3,
+        "city": "Tokyo",
+        "location": "Roppongi Hills",
+        "activity": "Night View",
+        "time": "18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7292, 35.6605]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 4,
+        "city": "Tokyo",
+        "location": "Tsukiji Market",
+        "activity": "Breakfast",
+        "time": "09:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7707, 35.6654]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 4,
+        "city": "Kyoto",
+        "location": "Kyoto Station",
+        "activity": "Arrival via Shinkansen",
+        "time": "15:45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7581, 34.9859]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 4,
+        "city": "Kyoto",
+        "location": "Gion District",
+        "activity": "Evening Walk",
+        "time": "17:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7745, 35.0036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 5,
+        "city": "Kyoto",
+        "location": "Fushimi Inari Shrine",
+        "activity": "10,000 Torii Gates",
+        "time": "07:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7727, 34.9671]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 5,
+        "city": "Kyoto",
+        "location": "Arashiyama Bamboo Grove",
+        "activity": "Bamboo Forest",
+        "time": "12:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.6722, 35.0094]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 5,
+        "city": "Kyoto",
+        "location": "Pontocho Alley",
+        "activity": "Dinner",
+        "time": "18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7710, 35.0045]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 6,
+        "city": "Kyoto",
+        "location": "Kinkaku-ji (Golden Pavilion)",
+        "activity": "Temple Visit",
+        "time": "08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7292, 35.0394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 6,
+        "city": "Kyoto",
+        "location": "Ryoan-ji Zen Garden",
+        "activity": "Zen Garden",
+        "time": "13:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7183, 35.0345]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 6,
+        "city": "Kyoto",
+        "location": "Tea Ceremony",
+        "activity": "Cultural Experience",
+        "time": "18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7745, 35.0036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 7,
+        "city": "Kyoto",
+        "location": "Nishiki Market",
+        "activity": "Shopping & Breakfast",
+        "time": "08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7661, 35.0050]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "day": 7,
+        "city": "Osaka",
+        "location": "Kansai International Airport",
+        "activity": "Departure",
+        "time": "14:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.2440, 34.4273]
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2025-10-04T10:30:00Z",
+    "itinerary_id": "itn_abc123xyz",
+    "total_points": 20,
+    "map_center": {
+      "lat": 35.3,
+      "lng": 137.5
+    },
+    "zoom_level": 7,
+    "recommended_renderer": "@mapbox GL JS v2.15+ or Leaflet v1.9+",
+    "embed_snippet": "<!-- copyable -->\n<div id=\"map-container\" style=\"width:100%;height:600px;\"></div>\n<script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>\n<link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />\n<script>\nmapboxgl.accessToken = 'YOUR_MAPBOX_TOKEN';\nconst map = new mapboxgl.Map({\n  container: 'map-container',\n  style: 'mapbox://styles/mapbox/streets-v12',\n  center: [137.5, 35.3],\n  zoom: 7\n});\n\nfetch('map_output.geojson')\n  .then(response => response.json())\n  .then(data => {\n    map.on('load', () => {\n      map.addSource('itinerary', {\n        type: 'geojson',\n        data: data\n      });\n      map.addLayer({\n        id: 'points',\n        type: 'circle',\n        source: 'itinerary',\n        paint: {\n          'circle-radius': 8,\n          'circle-color': '#FF6B6B'\n        }\n      });\n      // Add popups\n      data.features.forEach((feature, i) => {\n        const el = document.createElement('div');\n        el.className = 'marker';\n        el.textContent = feature.properties.day;\n        new mapboxgl.Marker(el)\n          .setLngLat(feature.geometry.coordinates)\n          .setPopup(new mapboxgl.Popup().setHTML(\n            `<h3>Day ${feature.properties.day}</h3>\n             <p>${feature.properties.activity}</p>\n             <small>${feature.properties.location}</small>`\n          ))\n          .addTo(map);\n      });\n    });\n  });\n</script>"
+  }
+}

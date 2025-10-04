@@ -1,0 +1,604 @@
+openapi: 3.0.3
+info:
+  title: TravelPlanner API
+  description: Professional travel itinerary generation and management API
+  version: 1.0.0
+  contact:
+    email: api@travelplanner.com
+  
+servers:
+  - url: https://api.travelplanner.com/v1
+    description: Production server
+  - url: https://staging-api.travelplanner.com/v1
+    description: Staging server
+
+tags:
+  - name: Authentication
+    description: User authentication and session management
+  - name: Itineraries
+    description: Itinerary creation and management
+  - name: Maps
+    description: Geographic data and map generation
+  - name: Users
+    description: User profile management
+
+paths:
+  /auth/google:
+    post:
+      tags:
+        - Authentication
+      summary: Authenticate via Google OAuth
+      description: Initiates Google OAuth flow and returns access token
+      operationId: googleAuth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_token:
+                  type: string
+                  description: Google OAuth ID token
+                redirect_uri:
+                  type: string
+                  format: uri
+              required:
+                - id_token
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+          
+  /auth/phone/send:
+    post:
+      tags:
+        - Authentication
+      summary: Send OTP to phone
+      description: Sends one-time password via SMS using @twilio
+      operationId: sendPhoneOTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone:
+                  type: string
+                  pattern: '^\+[1-9]\d{1,14}$'
+                  example: "+14155552671"
+              required:
+                - phone
+      responses:
+        '200':
+          description: OTP sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "OTP sent"
+                  expires_in:
+                    type: integer
+                    example: 300
+        '429':
+          description: Rate limit exceeded
+          
+  /auth/phone/verify:
+    post:
+      tags:
+        - Authentication
+      summary: Verify phone OTP
+      description: Verifies OTP and returns authentication token
+      operationId: verifyPhoneOTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone:
+                  type: string
+                otp:
+                  type: string
+                  minLength: 6
+                  maxLength: 6
+              required:
+                - phone
+                - otp
+      responses:
+        '200':
+          description: Verification successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid OTP
+          
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Email/password authentication
+      operationId: emailLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+                
+  /auth/refresh:
+    post:
+      tags:
+        - Authentication
+      summary: Refresh access token
+      operationId: refreshToken
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token:
+                  type: string
+              required:
+                - refresh_token
+      responses:
+        '200':
+          description: Token refreshed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+                
+  /itineraries:
+    post:
+      tags:
+        - Itineraries
+      summary: Create new itinerary
+      description: Generates complete itinerary with AI-powered planning
+      operationId: createItinerary
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItineraryRequest'
+      responses:
+        '201':
+          description: Itinerary created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItineraryResponse'
+        '400':
+          description: Invalid request parameters
+        '429':
+          description: Rate limit exceeded (max 10 per hour)
+          
+    get:
+      tags:
+        - Itineraries
+      summary: List user itineraries
+      operationId: listItineraries
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+      responses:
+        '200':
+          description: Itineraries retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ItinerarySummary'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                    
+  /itineraries/{id}:
+    get:
+      tags:
+        - Itineraries
+      summary: Get itinerary by ID
+      operationId: getItinerary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^itn_[a-zA-Z0-9]+$'
+      responses:
+        '200':
+          description: Itinerary details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItineraryResponse'
+        '404':
+          description: Itinerary not found
+          
+    put:
+      tags:
+        - Itineraries
+      summary: Update itinerary
+      operationId: updateItinerary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItineraryRequest'
+      responses:
+        '200':
+          description: Itinerary updated
+          
+    delete:
+      tags:
+        - Itineraries
+      summary: Delete itinerary
+      operationId: deleteItinerary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Itinerary deleted
+          
+  /itineraries/{id}/download:
+    get:
+      tags:
+        - Itineraries
+      summary: Download itinerary as PDF
+      operationId: downloadItinerary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          schema:
+            type: string
+            enum: [pdf, json]
+            default: pdf
+      responses:
+        '200':
+          description: PDF file
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+                
+  /map/geojson:
+    get:
+      tags:
+        - Maps
+      summary: Get itinerary map as GeoJSON
+      operationId: getMapGeoJSON
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: itinerary_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: GeoJSON data
+          content:
+            application/geo+json:
+              schema:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: "FeatureCollection"
+                  features:
+                    type: array
+                    items:
+                      type: object
+                      
+  /users/me:
+    get:
+      tags:
+        - Users
+      summary: Get current user profile
+      operationId: getCurrentUser
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+                
+  /sponsored/partners:
+    get:
+      tags:
+        - Sponsored
+      summary: Get sponsored partners
+      operationId: getSponsoredPartners
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [accommodation, dining, transport, activities]
+      responses:
+        '200':
+          description: Partner list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Partner'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+  schemas:
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: JWT access token (expires in 1 hour)
+        refresh_token:
+          type: string
+          description: Refresh token (expires in 30 days)
+        user_id:
+          type: string
+        session_id:
+          type: string
+        expires_at:
+          type: string
+          format: date-time
+          
+    ItineraryRequest:
+      type: object
+      required:
+        - destinations
+        - start_date
+        - days
+        - budget_total
+        - budget_currency
+      properties:
+        destinations:
+          type: array
+          items:
+            type: object
+            properties:
+              country:
+                type: string
+              cities:
+                type: array
+                items:
+                  type: string
+        primary_destination:
+          type: string
+        start_date:
+          type: string
+          format: date
+        days:
+          type: integer
+          minimum: 1
+          maximum: 30
+        traveler_type:
+          type: string
+          enum: [solo, couple, family, group, business]
+        budget_total:
+          type: number
+        budget_currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+        preferences:
+          type: object
+          properties:
+            hotels:
+              type: string
+            eat:
+              type: string
+            mobility:
+              type: string
+            accessibility:
+              type: boolean
+            language_pref:
+              type: array
+              items:
+                type: string
+                
+    ItineraryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        user_id:
+          type: string
+        meta:
+          type: object
+        trip_summary:
+          type: object
+        itinerary:
+          type: array
+        budget:
+          type: object
+        hotels_restaurants:
+          type: object
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+          
+    ItinerarySummary:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        destinations:
+          type: array
+          items:
+            type: string
+        start_date:
+          type: string
+          format: date
+        days:
+          type: integer
+        budget_total:
+          type: number
+        thumbnail_url:
+          type: string
+          format: uri
+          
+    User:
+      type: object
+      properties:
+        user_id:
+          type: string
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        avatar_url:
+          type: string
+          format: uri
+        created_at:
+          type: string
+          format: date-time
+          
+    Partner:
+      type: object
+      properties:
+        partner_id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        logo_url:
+          type: string
+        sponsored:
+          type: boolean
+          
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        total_pages:
+          type: integer
+          
+  responses:
+    UnauthorizedError:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Unauthorized"
+              message:
+                type: string
+                
+    RateLimitError:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Too many requests"
+              retry_after:
+                type: integer
+                description: Seconds until retry allowed
+
+security:
+  - bearerAuth: []

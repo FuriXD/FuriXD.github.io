@@ -1,0 +1,920 @@
+{
+  "meta": {
+    "user_id": "usr_abc123",
+    "session_id": "sess_xyz789",
+    "generated_at": "2025-10-04T10:30:00Z",
+    "version": "1.0",
+    "primary_destination": "Tokyo, Japan",
+    "traveler_type": "couple",
+    "auth_method": "google"
+  },
+  "trip_summary": {
+    "destinations": [
+      {
+        "country": "Japan",
+        "cities": ["Tokyo", "Kyoto"]
+      }
+    ],
+    "start_date": "2025-11-15",
+    "end_date": "2025-11-21",
+    "total_days": 7,
+    "total_nights": 6
+  },
+  "preferences": {
+    "hotels": "4-star",
+    "eat": "local",
+    "mobility": "public",
+    "accessibility": true,
+    "language_pref": ["en", "ja"]
+  },
+  "budget": {
+    "total": 3500,
+    "currency": "USD",
+    "conversion_note": "note: fetch live rates at runtime from @openexchangerates or @xe",
+    "tiers": {
+      "budget": {
+        "total": 2100,
+        "breakdown": {
+          "flights": 650,
+          "accommodation": 420,
+          "local_transport": 140,
+          "food": 420,
+          "attractions": 280,
+          "insurance": 70,
+          "contingency": 120
+        }
+      },
+      "medium": {
+        "total": 3500,
+        "breakdown": {
+          "flights": 900,
+          "accommodation": 840,
+          "local_transport": 210,
+          "food": 700,
+          "attractions": 490,
+          "insurance": 105,
+          "contingency": 255
+        }
+      },
+      "premium": {
+        "total": 6500,
+        "breakdown": {
+          "flights": 1800,
+          "accommodation": 1680,
+          "local_transport": 350,
+          "food": 1260,
+          "attractions": 780,
+          "insurance": 130,
+          "contingency": 500
+        }
+      }
+    },
+    "estimation_method": "estimate: flight prices based on 2-month advance booking, accommodation via @booking average rates, transport via official transit operators, food based on regional cost-of-living indices"
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "date": "2025-11-15",
+      "city": "Tokyo",
+      "title": "Arrival & Shibuya Exploration",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "09:00",
+          "end_time": "12:00",
+          "activity": "Arrival at Narita International Airport (NRT)",
+          "location": "Narita Airport",
+          "coordinates": {
+            "lat": 35.7647,
+            "lng": 140.3864
+          },
+          "duration_minutes": 180,
+          "transport": {
+            "mode": "N'EX (Narita Express)",
+            "duration_minutes": 90,
+            "cost_usd": 30,
+            "booking_link": "https://www.jreast.co.jp/e/nex/"
+          },
+          "notes": "Clear customs, purchase Suica card for transit"
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "activity": "Check-in at hotel & Lunch in Shibuya",
+          "location": "Shibuya",
+          "coordinates": {
+            "lat": 35.6595,
+            "lng": 139.7004
+          },
+          "duration_minutes": 240,
+          "dining": {
+            "restaurant": "Ichiran Ramen Shibuya",
+            "type": "local",
+            "cost_usd": 12,
+            "booking_link": "https://en.ichiran.com/"
+          },
+          "notes": "Visit Shibuya Crossing, Hachiko statue"
+        },
+        {
+          "time_window": "evening",
+          "start_time": "18:00",
+          "end_time": "21:00",
+          "activity": "Shibuya Sky Observatory",
+          "location": "Shibuya Sky",
+          "coordinates": {
+            "lat": 35.6585,
+            "lng": 139.7013
+          },
+          "duration_minutes": 180,
+          "cost_usd": 20,
+          "booking_link": "https://www.shibuya-scramble-square.com/sky/",
+          "notes": "Sunset views over Tokyo, advance booking recommended"
+        }
+      ],
+      "accommodation": {
+        "hotel": "Shibuya Excel Hotel Tokyu",
+        "tier": "medium",
+        "cost_per_night_usd": 140,
+        "booking_link": "https://www.booking.com/hotel/jp/shibuya-excel-tokyu.html",
+        "coordinates": {
+          "lat": 35.6595,
+          "lng": 139.7015
+        }
+      }
+    },
+    {
+      "day": 2,
+      "date": "2025-11-16",
+      "city": "Tokyo",
+      "title": "Traditional Tokyo: Asakusa & Ueno",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "09:00",
+          "end_time": "12:00",
+          "activity": "Senso-ji Temple & Nakamise Street",
+          "location": "Asakusa",
+          "coordinates": {
+            "lat": 35.7148,
+            "lng": 139.7967
+          },
+          "duration_minutes": 180,
+          "cost_usd": 0,
+          "transport": {
+            "mode": "Tokyo Metro Ginza Line",
+            "duration_minutes": 20,
+            "cost_usd": 2
+          },
+          "notes": "Arrive early to avoid crowds, best visiting hours: 6:00-10:00 AM"
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "activity": "Ueno Park & Museums",
+          "location": "Ueno",
+          "coordinates": {
+            "lat": 35.7148,
+            "lng": 139.7743
+          },
+          "duration_minutes": 240,
+          "cost_usd": 15,
+          "transport": {
+            "mode": "Tokyo Metro Ginza Line",
+            "duration_minutes": 10,
+            "cost_usd": 2
+          },
+          "dining": {
+            "restaurant": "Ameya Yokocho Food Stalls",
+            "type": "local",
+            "cost_usd": 15
+          },
+          "notes": "Tokyo National Museum, Ueno Zoo (optional)"
+        },
+        {
+          "time_window": "evening",
+          "start_time": "18:00",
+          "end_time": "21:00",
+          "activity": "Akihabara Electric Town",
+          "location": "Akihabara",
+          "coordinates": {
+            "lat": 35.7022,
+            "lng": 139.7745
+          },
+          "duration_minutes": 180,
+          "cost_usd": 0,
+          "notes": "Anime, manga, electronics shopping district"
+        }
+      ],
+      "accommodation": {
+        "hotel": "Shibuya Excel Hotel Tokyu",
+        "tier": "medium",
+        "cost_per_night_usd": 140
+      }
+    },
+    {
+      "day": 3,
+      "date": "2025-11-17",
+      "city": "Tokyo",
+      "title": "Modern Tokyo: Roppongi & Odaiba",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "09:00",
+          "end_time": "12:00",
+          "activity": "Meiji Shrine & Yoyogi Park",
+          "location": "Harajuku",
+          "coordinates": {
+            "lat": 35.6762,
+            "lng": 139.6993
+          },
+          "duration_minutes": 180,
+          "cost_usd": 0,
+          "transport": {
+            "mode": "JR Yamanote Line",
+            "duration_minutes": 15,
+            "cost_usd": 2
+          }
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "activity": "TeamLab Borderless Digital Art Museum",
+          "location": "Odaiba",
+          "coordinates": {
+            "lat": 35.6249,
+            "lng": 139.7750
+          },
+          "duration_minutes": 240,
+          "cost_usd": 32,
+          "booking_link": "https://www.teamlab.art/e/borderless_azabudai/",
+          "transport": {
+            "mode": "Yurikamome Line",
+            "duration_minutes": 30,
+            "cost_usd": 4
+          },
+          "notes": "Book tickets 2 weeks in advance"
+        },
+        {
+          "time_window": "evening",
+          "start_time": "18:00",
+          "end_time": "21:00",
+          "activity": "Roppongi Hills & Tokyo Tower Night View",
+          "location": "Roppongi",
+          "coordinates": {
+            "lat": 35.6605,
+            "lng": 139.7292
+          },
+          "duration_minutes": 180,
+          "cost_usd": 18,
+          "dining": {
+            "restaurant": "Gonpachi Nishiazabu (Kill Bill restaurant)",
+            "type": "local",
+            "cost_usd": 45,
+            "booking_link": "https://gonpachi.jp/"
+          }
+        }
+      ],
+      "accommodation": {
+        "hotel": "Shibuya Excel Hotel Tokyu",
+        "tier": "medium",
+        "cost_per_night_usd": 140
+      }
+    },
+    {
+      "day": 4,
+      "date": "2025-11-18",
+      "city": "Tokyo to Kyoto",
+      "title": "Shinkansen Journey & Kyoto Arrival",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "09:00",
+          "end_time": "12:00",
+          "activity": "Tsukiji Outer Market Breakfast & Check-out",
+          "location": "Tsukiji",
+          "coordinates": {
+            "lat": 35.6654,
+            "lng": 139.7707
+          },
+          "duration_minutes": 120,
+          "cost_usd": 20,
+          "dining": {
+            "restaurant": "Tsukiji Market Food Stalls",
+            "type": "local",
+            "cost_usd": 20
+          }
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "13:00",
+          "end_time": "16:00",
+          "activity": "Shinkansen (Bullet Train) to Kyoto",
+          "location": "Tokyo Station to Kyoto Station",
+          "coordinates": {
+            "lat": 34.9859,
+            "lng": 135.7581
+          },
+          "duration_minutes": 135,
+          "cost_usd": 130,
+          "transport": {
+            "mode": "Nozomi Shinkansen",
+            "duration_minutes": 135,
+            "cost_usd": 130,
+            "booking_link": "https://www.jreast.co.jp/e/",
+            "notes": "Reserve seats in advance, not covered by JR Pass (Nozomi)"
+          }
+        },
+        {
+          "time_window": "evening",
+          "start_time": "17:00",
+          "end_time": "21:00",
+          "activity": "Check-in & Gion District Evening Walk",
+          "location": "Gion, Kyoto",
+          "coordinates": {
+            "lat": 35.0036,
+            "lng": 135.7745
+          },
+          "duration_minutes": 240,
+          "cost_usd": 0,
+          "dining": {
+            "restaurant": "Gion Karyo",
+            "type": "local",
+            "cost_usd": 55,
+            "booking_link": "https://gionkaryo.com/"
+          },
+          "notes": "Geisha spotting best time: 5:30-6:30 PM"
+        }
+      ],
+      "accommodation": {
+        "hotel": "Hotel Gracery Kyoto Sanjo",
+        "tier": "medium",
+        "cost_per_night_usd": 120,
+        "booking_link": "https://www.booking.com/hotel/jp/gracery-kyoto-sanjo.html",
+        "coordinates": {
+          "lat": 35.0094,
+          "lng": 135.7681
+        }
+      }
+    },
+    {
+      "day": 5,
+      "date": "2025-11-19",
+      "city": "Kyoto",
+      "title": "Historical Kyoto: Temples & Bamboo Grove",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "07:00",
+          "end_time": "11:00",
+          "activity": "Fushimi Inari Shrine (10,000 Torii Gates)",
+          "location": "Fushimi Inari",
+          "coordinates": {
+            "lat": 34.9671,
+            "lng": 135.7727
+          },
+          "duration_minutes": 240,
+          "cost_usd": 0,
+          "transport": {
+            "mode": "JR Nara Line",
+            "duration_minutes": 10,
+            "cost_usd": 2
+          },
+          "notes": "Arrive early (before 8 AM) to avoid crowds, 2-hour hike to summit"
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "12:00",
+          "end_time": "17:00",
+          "activity": "Arashiyama Bamboo Grove & Tenryu-ji Temple",
+          "location": "Arashiyama",
+          "coordinates": {
+            "lat": 35.0094,
+            "lng": 135.6722
+          },
+          "duration_minutes": 300,
+          "cost_usd": 8,
+          "transport": {
+            "mode": "JR Sagano Line",
+            "duration_minutes": 20,
+            "cost_usd": 3
+          },
+          "dining": {
+            "restaurant": "Arashiyama Yoshimura (Soba)",
+            "type": "local",
+            "cost_usd": 18
+          }
+        },
+        {
+          "time_window": "evening",
+          "start_time": "18:00",
+          "end_time": "21:00",
+          "activity": "Pontocho Alley Dinner",
+          "location": "Pontocho",
+          "coordinates": {
+            "lat": 35.0045,
+            "lng": 135.7710
+          },
+          "duration_minutes": 180,
+          "cost_usd": 50,
+          "dining": {
+            "restaurant": "Pontocho Kappa Zushi",
+            "type": "local",
+            "cost_usd": 50
+          }
+        }
+      ],
+      "accommodation": {
+        "hotel": "Hotel Gracery Kyoto Sanjo",
+        "tier": "medium",
+        "cost_per_night_usd": 120
+      }
+    },
+    {
+      "day": 6,
+      "date": "2025-11-20",
+      "city": "Kyoto",
+      "title": "Zen Gardens & Cultural Experience",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "08:00",
+          "end_time": "12:00",
+          "activity": "Kinkaku-ji (Golden Pavilion)",
+          "location": "Kinkaku-ji",
+          "coordinates": {
+            "lat": 35.0394,
+            "lng": 135.7292
+          },
+          "duration_minutes": 120,
+          "cost_usd": 5,
+          "transport": {
+            "mode": "Kyoto City Bus #205",
+            "duration_minutes": 25,
+            "cost_usd": 2
+          },
+          "notes": "UNESCO World Heritage Site"
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "activity": "Ryoan-ji Zen Garden & Ninnaji Temple",
+          "location": "Ryoan-ji",
+          "coordinates": {
+            "lat": 35.0345,
+            "lng": 135.7183
+          },
+          "duration_minutes": 240,
+          "cost_usd": 10,
+          "transport": {
+            "mode": "Kyoto City Bus",
+            "duration_minutes": 10,
+            "cost_usd": 2
+          },
+          "dining": {
+            "restaurant": "Omen Kodai-ji (Udon)",
+            "type": "local",
+            "cost_usd": 20
+          }
+        },
+        {
+          "time_window": "evening",
+          "start_time": "18:00",
+          "end_time": "21:00",
+          "activity": "Traditional Tea Ceremony Experience",
+          "location": "Gion",
+          "coordinates": {
+            "lat": 35.0036,
+            "lng": 135.7745
+          },
+          "duration_minutes": 90,
+          "cost_usd": 45,
+          "booking_link": "https://www.tea-ceremony-kyoto.com/",
+          "notes": "Cultural experience with kimono rental option"
+        }
+      ],
+      "accommodation": {
+        "hotel": "Hotel Gracery Kyoto Sanjo",
+        "tier": "medium",
+        "cost_per_night_usd": 120
+      }
+    },
+    {
+      "day": 7,
+      "date": "2025-11-21",
+      "city": "Kyoto",
+      "title": "Departure Day",
+      "schedule": [
+        {
+          "time_window": "morning",
+          "start_time": "08:00",
+          "end_time": "11:00",
+          "activity": "Nishiki Market Shopping & Checkout",
+          "location": "Nishiki Market",
+          "coordinates": {
+            "lat": 35.0050,
+            "lng": 135.7661
+          },
+          "duration_minutes": 180,
+          "cost_usd": 30,
+          "dining": {
+            "restaurant": "Nishiki Market Food Stalls",
+            "type": "local",
+            "cost_usd": 15
+          },
+          "notes": "Last-minute souvenir shopping, traditional Kyoto foods"
+        },
+        {
+          "time_window": "afternoon",
+          "start_time": "12:00",
+          "end_time": "15:00",
+          "activity": "Departure to Kansai International Airport (KIX)",
+          "location": "Kansai Airport",
+          "coordinates": {
+            "lat": 34.4273,
+            "lng": 135.2440
+          },
+          "duration_minutes": 75,
+          "transport": {
+            "mode": "JR Haruka Express",
+            "duration_minutes": 75,
+            "cost_usd": 28,
+            "booking_link": "https://www.westjr.co.jp/global/en/ticket/icoca-haruka/"
+          }
+        }
+      ]
+    }
+  ],
+  "hotels_restaurants": {
+    "tokyo": {
+      "hotels": [
+        {
+          "name": "Sakura Hotel Ikebukuro",
+          "tier": "budget",
+          "cost_per_night_usd": 45,
+          "rationale": "Clean hostel with private rooms, excellent for solo/couple travelers",
+          "booking_link": "https://www.booking.com/hotel/jp/sakura-ikebukuro.html",
+          "coordinates": {"lat": 35.7289, "lng": 139.7106},
+          "sponsored": false
+        },
+        {
+          "name": "Shibuya Excel Hotel Tokyu",
+          "tier": "medium",
+          "cost_per_night_usd": 140,
+          "rationale": "4-star hotel directly above Shibuya Station, perfect location",
+          "booking_link": "https://www.booking.com/hotel/jp/shibuya-excel-tokyu.html",
+          "coordinates": {"lat": 35.6595, "lng": 139.7015},
+          "sponsored": true
+        },
+        {
+          "name": "Park Hyatt Tokyo",
+          "tier": "premium",
+          "cost_per_night_usd": 520,
+          "rationale": "Luxury hotel featured in 'Lost in Translation', stunning city views",
+          "booking_link": "https://www.hyatt.com/en-US/hotel/japan/park-hyatt-tokyo/tyoph",
+          "coordinates": {"lat": 35.6854, "lng": 139.6917},
+          "sponsored": false
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Ichiran Ramen",
+          "tier": "budget",
+          "cuisine": "local",
+          "cost_usd": 12,
+          "rationale": "Iconic tonkotsu ramen chain, solo dining booths",
+          "booking_link": "https://en.ichiran.com/",
+          "coordinates": {"lat": 35.6595, "lng": 139.7004}
+        },
+        {
+          "name": "Gonpachi Nishiazabu",
+          "tier": "medium",
+          "cuisine": "local",
+          "cost_usd": 45,
+          "rationale": "Famous 'Kill Bill' restaurant, izakaya-style dining",
+          "booking_link": "https://gonpachi.jp/",
+          "coordinates": {"lat": 35.6605, "lng": 139.7292}
+        },
+        {
+          "name": "Sukiyabashi Jiro",
+          "tier": "premium",
+          "cuisine": "local",
+          "cost_usd": 400,
+          "rationale": "3-Michelin-star sushi, world-renowned (book 1 month ahead)",
+          "booking_link": "https://www.sushi-jiro.jp/",
+          "coordinates": {"lat": 35.6712, "lng": 139.7637},
+          "notes": "Reservation through hotel concierge only"
+        }
+      ]
+    },
+    "kyoto": {
+      "hotels": [
+        {
+          "name": "Piece Hostel Sanjo",
+          "tier": "budget",
+          "cost_per_night_usd": 35,
+          "rationale": "Modern hostel in central Kyoto, rooftop terrace",
+          "booking_link": "https://www.booking.com/hotel/jp/piece-hostel-sanjo.html",
+          "coordinates": {"lat": 35.0094, "lng": 135.7681},
+          "sponsored": false
+        },
+        {
+          "name": "Hotel Gracery Kyoto Sanjo",
+          "tier": "medium",
+          "cost_per_night_usd": 120,
+          "rationale": "Newly renovated 4-star, walking distance to Gion",
+          "booking_link": "https://www.booking.com/hotel/jp/gracery-kyoto-sanjo.html",
+          "coordinates": {"lat": 35.0094, "lng": 135.7681},
+          "sponsored": true
+        },
+        {
+          "name": "The Ritz-Carlton Kyoto",
+          "tier": "premium",
+          "cost_per_night_usd": 680,
+          "rationale": "Luxury riverside hotel with traditional Japanese design",
+          "booking_link": "https://www.ritzcarlton.com/en/hotels/japan/kyoto",
+          "coordinates": {"lat": 35.0047, "lng": 135.7714},
+          "sponsored": false
+        }
+      ],
+      "restaurants": [
+        {
+          "name": "Omen Kodai-ji",
+          "tier": "budget",
+          "cuisine": "local",
+          "cost_usd": 20,
+          "rationale": "Famous udon noodles, vegetarian-friendly options",
+          "booking_link": "https://www.omen.co.jp/",
+          "coordinates": {"lat": 35.0036, "lng": 135.7745}
+        },
+        {
+          "name": "Gion Karyo",
+          "tier": "medium",
+          "cuisine": "local",
+          "cost_usd": 55,
+          "rationale": "Traditional kaiseki in historic Gion district",
+          "booking_link": "https://gionkaryo.com/",
+          "coordinates": {"lat": 35.0036, "lng": 135.7745}
+        },
+        {
+          "name": "Kikunoi Honten",
+          "tier": "premium",
+          "cuisine": "local",
+          "cost_usd": 350,
+          "rationale": "3-Michelin-star kaiseki, seasonal tasting menus",
+          "booking_link": "https://kikunoi.jp/",
+          "coordinates": {"lat": 34.9983, "lng": 135.7809},
+          "notes": "Book 2 months in advance"
+        }
+      ]
+    }
+  },
+  "local_spots": {
+    "must_visit": [
+      {
+        "name": "Senso-ji Temple",
+        "city": "Tokyo",
+        "type": "cultural",
+        "coordinates": {"lat": 35.7148, "lng": 139.7967},
+        "best_hours": "06:00-10:00",
+        "cost_usd": 0,
+        "notes": "Tokyo's oldest temple, arrive early to avoid crowds"
+      },
+      {
+        "name": "Fushimi Inari Shrine",
+        "city": "Kyoto",
+        "type": "cultural",
+        "coordinates": {"lat": 34.9671, "lng": 135.7727},
+        "best_hours": "07:00-09:00 or 17:00-sunset",
+        "cost_usd": 0,
+        "notes": "10,000 vermillion torii gates, 2-hour hike to summit"
+      }
+    ],
+    "offbeat_gems": [
+      {
+        "name": "Yanaka Ginza Shopping Street",
+        "city": "Tokyo",
+        "type": "neighborhood",
+        "coordinates": {"lat": 35.7278, "lng": 139.7657},
+        "best_hours": "14:00-18:00",
+        "cost_usd": 0,
+        "notes": "Old Tokyo atmosphere, cat-themed shops, local food stalls"
+      },
+      {
+        "name": "Philosopher's Path",
+        "city": "Kyoto",
+        "type": "scenic",
+        "coordinates": {"lat": 35.0272, "lng": 135.7953},
+        "best_hours": "08:00-10:00",
+        "cost_usd": 0,
+        "notes": "2km canal walk, cherry blossoms (spring) or autumn leaves (fall)"
+      },
+      {
+        "name": "Nakano Broadway",
+        "city": "Tokyo",
+        "type": "shopping",
+        "coordinates": {"lat": 35.7066, "lng": 139.6644},
+        "best_hours": "12:00-20:00",
+        "cost_usd": 0,
+        "notes": "Underground otaku paradise, vintage toys, manga"
+      }
+    ]
+  },
+  "transportation": {
+    "inter_city": [
+      {
+        "route": "Tokyo to Kyoto",
+        "mode": "Nozomi Shinkansen",
+        "duration_minutes": 135,
+        "cost_usd": 130,
+        "booking_link": "https://www.jreast.co.jp/e/",
+        "frequency": "every 10-20 minutes",
+        "notes": "Reserve seats online 1 month in advance"
+      },
+      {
+        "route": "Narita Airport to Tokyo",
+        "mode": "N'EX (Narita Express)",
+        "duration_minutes": 90,
+        "cost_usd": 30,
+        "booking_link": "https://www.jreast.co.jp/e/nex/",
+        "frequency": "every 30 minutes",
+        "notes": "Alternative: Keisei Skyliner (60 min, $22)"
+      },
+      {
+        "route": "Kyoto to Kansai Airport",
+        "mode": "JR Haruka Express",
+        "duration_minutes": 75,
+        "cost_usd": 28,
+        "booking_link": "https://www.westjr.co.jp/global/en/ticket/icoca-haruka/",
+        "frequency": "every 30 minutes",
+        "notes": "ICOCA & HARUKA package for tourists"
+      }
+    ],
+    "local": [
+      {
+        "city": "Tokyo",
+        "mode": "Tokyo Metro/Toei Subway",
+        "cost_per_ride_usd": 2,
+        "pass_options": [
+          {
+            "name": "72-Hour Tokyo Subway Pass",
+            "cost_usd": 15,
+            "validity": "72 hours",
+            "booking_link": "https://www.tokyometro.jp/en/ticket/value/travel/"
+          }
+        ],
+        "notes": "Purchase Suica/Pasmo IC card for convenience"
+      },
+      {
+        "city": "Kyoto",
+        "mode": "Kyoto City Bus",
+        "cost_per_ride_usd": 2,
+        "pass_options": [
+          {
+            "name": "Kyoto City Bus 1-Day Pass",
+            "cost_usd": 6,
+            "validity": "1 day",
+            "booking_link": "https://www.city.kyoto.lg.jp/kotsu/page/0000028337.html"
+          }
+        ],
+        "notes": "Buses can be crowded during peak tourist season"
+      }
+    ]
+  },
+  "cultural_guide": {
+    "language": {
+      "essential_phrases": [
+        {"phrase": "Sumimasen", "translation": "Excuse me / Sorry", "pronunciation": "soo-mee-mah-sen"},
+        {"phrase": "Arigatou gozaimasu", "translation": "Thank you very much", "pronunciation": "ah-ree-gah-toh go-zai-mas"},
+        {"phrase": "Eigo o hanasemasu ka?", "translation": "Do you speak English?", "pronunciation": "eh-go oh hah-nah-seh-mas kah"},
+        {"phrase": "Kore o kudasai", "translation": "This one, please", "pronunciation": "koh-reh oh koo-dah-sai"},
+        {"phrase": "Ikura desu ka?", "translation": "How much is it?", "pronunciation": "ee-koo-rah des kah"}
+      ]
+    },
+    "etiquette": [
+      {
+        "rule": "Remove shoes indoors",
+        "context": "Temples, traditional restaurants, ryokans, and some homes",
+        "importance": "critical"
+      },
+      {
+        "rule": "No tipping",
+        "context": "Tipping is considered rude in Japan",
+        "importance": "critical"
+      },
+      {
+        "rule": "Quiet on public transport",
+        "context": "No phone calls, minimize conversation volume",
+        "importance": "high"
+      },
+      {
+        "rule": "Bow when greeting",
+        "context": "Slight bow (15 degrees) for casual greeting",
+        "importance": "medium"
+      },
+      {
+        "rule": "Don't eat while walking",
+        "context": "Stand while eating street food, then continue walking",
+        "importance": "medium"
+      }
+    ],
+    "cultural_traps": [
+      {
+        "trap": "Entering temples with shoes",
+        "consequence": "Disrespectful, will be asked to remove them",
+        "avoidance": "Look for shoe racks or lockers at entrance"
+      },
+      {
+        "trap": "Using phone on trains",
+        "consequence": "Stares from locals, considered inconsiderate",
+        "avoidance": "Switch to silent mode, text instead of calling"
+      },
+      {
+        "trap": "Sticking chopsticks upright in rice",
+        "consequence": "Funeral ritual, very bad luck",
+        "avoidance": "Rest chopsticks on provided holder or bowl edge"
+      }
+    ],
+    "suggested_experiences": [
+      {
+        "experience": "Traditional Tea Ceremony",
+        "city": "Kyoto",
+        "duration_minutes": 90,
+        "cost_usd": 45,
+        "booking_link": "https://www.tea-ceremony-kyoto.com/"
+      },
+      {
+        "experience": "Sumo Wrestling Tournament",
+        "city": "Tokyo",
+        "duration_minutes": 360,
+        "cost_usd": 80,
+        "booking_link": "https://www.sumo.or.jp/EnTicket/",
+        "notes": "Check tournament schedule (Jan, May, Sep in Tokyo)"
+      },
+      {
+        "experience": "Onsen (Hot Spring) Visit",
+        "city": "Hakone (day trip from Tokyo)",
+        "duration_minutes": 180,
+        "cost_usd": 25,
+        "notes": "note: verify tattoo policy before visiting"
+      }
+    ]
+  },
+  "emergency_contacts": {
+    "police": "110",
+    "ambulance_fire": "119",
+    "japan_helpline": "+81-570-000-911",
+    "us_embassy_tokyo": "+81-3-3224-5000",
+    "tokyo_medical_clinic": "+81-3-3436-3028",
+    "kyoto_city_hospital": "+81-75-311-5311",
+    "notes": "English support available on Japan Helpline (24/7)"
+  },
+  "visa_requirements": {
+    "note": "note: verify visa requirements with official government sources before travel",
+    "general": "Most nationalities receive 90-day visa-free entry for tourism",
+    "links": [
+      "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    ]
+  },
+  "sponsored_content": [
+    {
+      "partner_id": "hotel_booking_001",
+      "partner_name": "Booking.com",
+      "type": "accommodation",
+      "placement": "hotels_list",
+      "items": [
+        "Shibuya Excel Hotel Tokyu",
+        "Hotel Gracery Kyoto Sanjo"
+      ],
+      "sponsored": true,
+      "disclosure": "Sponsored placement"
+    }
+  ],
+  "translations": {
+    "en": {
+      "trip_title": "7-Day Japan Adventure: Tokyo & Kyoto",
+      "day": "Day",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening",
+      "accommodation": "Accommodation",
+      "transport": "Transport",
+      "cost": "Cost",
+      "total": "Total"
+    },
+    "ja": {
+      "trip_title": "7日間の日本の冒険：東京と京都",
+      "day": "日目",
+      "morning": "午前",
+      "afternoon": "午後",
+      "evening": "夕方",
+      "accommodation": "宿泊施設",
+      "transport": "交通",
+      "cost": "費用",
+      "total": "合計"
+    }
+  }
+}

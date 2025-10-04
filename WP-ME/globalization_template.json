@@ -1,0 +1,551 @@
+{
+  "globalization_rules": {
+    "version": "1.0",
+    "description": "Regional adaptation rules for global itinerary generation",
+    "supported_regions": [
+      "japan",
+      "usa",
+      "india",
+      "singapore",
+      "vietnam",
+      "indonesia",
+      "afghanistan",
+      "europe",
+      "middle_east",
+      "australia"
+    ]
+  },
+  "regional_templates": {
+    "japan": {
+      "currency": "JPY",
+      "language": ["ja", "en"],
+      "time_zone": "Asia/Tokyo",
+      "date_format": "YYYY/MM/DD",
+      "transportation": {
+        "primary": "public_transit",
+        "recommended": ["JR Pass", "Suica/Pasmo IC card", "Shinkansen"],
+        "driving_side": "left",
+        "taxi_apps": ["JapanTaxi", "GO"],
+        "notes": "Extensive rail network, minimal English signage outside major cities"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "ryokan", "hostel", "capsule"],
+        "avg_cost_per_night_usd": {
+          "budget": 40,
+          "medium": 120,
+          "premium": 400
+        },
+        "booking_platforms": ["booking.com", "rakuten.co.jp", "jalan.net"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 10,
+          "medium": 30,
+          "premium": 100
+        },
+        "tipping": false,
+        "dietary_notes": "Limited vegetarian options, specify 'bejitarian' (ベジタリアン)"
+      },
+      "cultural_considerations": {
+        "remove_shoes": true,
+        "bowing": "Light bow (15°) for greetings",
+        "cash_preferred": true,
+        "quiet_on_trains": true,
+        "tattoo_restrictions": "Many onsen/sento ban tattoos",
+        "gift_giving": "Omiyage (souvenirs) expected from trips"
+      },
+      "visa_requirements": {
+        "tourist_visa_free": ["USA", "Canada", "UK", "Australia", "EU nations"],
+        "duration": "90 days",
+        "notes": "note: verify visa requirements with embassy"
+      },
+      "emergency": {
+        "police": "110",
+        "ambulance": "119",
+        "english_helpline": "+81-570-000-911"
+      },
+      "best_seasons": {
+        "spring": "Cherry blossoms (March-April)",
+        "fall": "Autumn foliage (October-November)",
+        "avoid": "August (very hot and humid), Golden Week (late April-early May)"
+      }
+    },
+    "usa": {
+      "currency": "USD",
+      "language": ["en"],
+      "time_zones": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles"],
+      "date_format": "MM/DD/YYYY",
+      "transportation": {
+        "primary": "car_rental",
+        "recommended": ["Rental car", "Uber/Lyft", "Domestic flights"],
+        "driving_side": "right",
+        "taxi_apps": ["Uber", "Lyft"],
+        "notes": "Car essential outside major cities, limited public transit"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "motel", "airbnb", "hostel"],
+        "avg_cost_per_night_usd": {
+          "budget": 70,
+          "medium": 150,
+          "premium": 400
+        },
+        "booking_platforms": ["booking.com", "expedia.com", "hotels.com", "airbnb.com"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 15,
+          "medium": 40,
+          "premium": 100
+        },
+        "tipping": true,
+        "tipping_percentage": "18-20%",
+        "dietary_notes": "Wide vegetarian/vegan options available"
+      },
+      "cultural_considerations": {
+        "tipping_culture": "Expected in restaurants, bars, taxis, hotels",
+        "personal_space": "Larger personal space bubble",
+        "small_talk": "Common with strangers",
+        "punctuality": "Expected for business, flexible for social"
+      },
+      "visa_requirements": {
+        "esta": ["UK", "Australia", "Japan", "South Korea", "EU nations"],
+        "tourist_visa": "Required for most other nations",
+        "duration": "90 days (ESTA), varies for visa",
+        "notes": "note: verify ESTA eligibility before travel"
+      },
+      "emergency": {
+        "police": "911",
+        "ambulance": "911",
+        "fire": "911"
+      },
+      "best_seasons": {
+        "spring": "Mild weather nationwide (April-May)",
+        "fall": "Foliage season (September-November)",
+        "avoid": "Hurricane season Gulf Coast (June-November)"
+      }
+    },
+    "india": {
+      "currency": "INR",
+      "language": ["hi", "en", "ta", "te", "bn"],
+      "time_zone": "Asia/Kolkata",
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "train_taxi",
+        "recommended": ["Indian Railways", "Ola/Uber", "Domestic flights"],
+        "driving_side": "left",
+        "taxi_apps": ["Ola", "Uber", "Rapido"],
+        "notes": "Extensive train network, book in advance for long-distance"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "guesthouse", "homestay", "heritage_hotel"],
+        "avg_cost_per_night_usd": {
+          "budget": 15,
+          "medium": 50,
+          "premium": 200
+        },
+        "booking_platforms": ["booking.com", "makemytrip.com", "goibibo.com", "oyo.com"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 3,
+          "medium": 10,
+          "premium": 30
+        },
+        "tipping": false,
+        "tipping_percentage": "Optional 5-10%",
+        "dietary_notes": "Excellent vegetarian options, many pure-veg restaurants"
+      },
+      "cultural_considerations": {
+        "dress_modestly": "Especially at religious sites",
+        "remove_shoes": "At temples, homes, some shops",
+        "head_wobble": "Means yes/acknowledgment",
+        "left_hand": "Use right hand for eating/giving",
+        "haggling": "Expected in markets",
+        "punctuality": "Flexible, 'Indian Standard Time'"
+      },
+      "visa_requirements": {
+        "e-visa": "Available for most nationalities (60-day)",
+        "regular_visa": "Apply at embassy/consulate",
+        "notes": "note: apply 4 weeks before travel, verify with Indian embassy"
+      },
+      "emergency": {
+        "police": "100",
+        "ambulance": "102",
+        "fire": "101",
+        "tourist_helpline": "1363"
+      },
+      "best_seasons": {
+        "winter": "October-March (pleasant, best time)",
+        "monsoon": "June-September (humid, floods possible)",
+        "avoid": "April-June (extremely hot)"
+      },
+      "intra_india_variants": {
+        "north": {
+          "regions": ["Delhi", "Rajasthan", "Himachal Pradesh", "Uttarakhand"],
+          "best_time": "October-March",
+          "avg_temp": "10-35°C",
+          "highlights": "Taj Mahal, forts, Himalayas"
+        },
+        "south": {
+          "regions": ["Kerala", "Tamil Nadu", "Karnataka", "Goa"],
+          "best_time": "November-February",
+          "avg_temp": "20-35°C",
+          "highlights": "Backwaters, beaches, temples"
+        },
+        "east": {
+          "regions": ["West Bengal", "Odisha", "Assam"],
+          "best_time": "October-March",
+          "avg_temp": "15-32°C",
+          "highlights": "Kolkata, Darjeeling, tea gardens"
+        },
+        "west": {
+          "regions": ["Maharashtra", "Gujarat", "Goa"],
+          "best_time": "November-February",
+          "avg_temp": "18-32°C",
+          "highlights": "Mumbai, beaches, wildlife"
+        }
+      }
+    },
+    "singapore": {
+      "currency": "SGD",
+      "language": ["en", "zh", "ms", "ta"],
+      "time_zone": "Asia/Singapore",
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "public_transit",
+        "recommended": ["MRT", "Bus", "Grab", "Walking"],
+        "driving_side": "left",
+        "taxi_apps": ["Grab", "Gojek"],
+        "notes": "Excellent public transit, most places walkable"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "hostel", "airbnb"],
+        "avg_cost_per_night_usd": {
+          "budget": 50,
+          "medium": 150,
+          "premium": 400
+        },
+        "booking_platforms": ["booking.com", "agoda.com", "expedia.com"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 5,
+          "medium": 20,
+          "premium": 80
+        },
+        "tipping": false,
+        "service_charge": "10% usually included",
+        "dietary_notes": "Multicultural food scene, halal options widely available"
+      },
+      "cultural_considerations": {
+        "chewing_gum": "Banned (except medical)",
+        "littering": "Heavy fines (up to SGD 1,000)",
+        "public_order": "Strictly enforced laws",
+        "multilingual": "English widely spoken"
+      },
+      "visa_requirements": {
+        "visa_free": ["USA", "UK", "Australia", "Japan", "EU nations"],
+        "duration": "30-90 days depending on nationality",
+        "notes": "note: verify visa requirements online"
+      },
+      "emergency": {
+        "police": "999",
+        "ambulance": "995",
+        "fire": "995"
+      },
+      "best_seasons": {
+        "year_round": "Tropical climate, hot and humid all year",
+        "avoid": "November-January (monsoon season, heavier rain)"
+      }
+    },
+    "vietnam": {
+      "currency": "VND",
+      "language": ["vi", "en"],
+      "time_zone": "Asia/Ho_Chi_Minh",
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "motorbike_taxi",
+        "recommended": ["Grab Bike", "Bus", "Train", "Domestic flights"],
+        "driving_side": "right",
+        "taxi_apps": ["Grab"],
+        "notes": "Chaotic traffic, avoid self-driving. Sleeper buses common for long distances"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "hostel", "homestay", "boutique"],
+        "avg_cost_per_night_usd": {
+          "budget": 10,
+          "medium": 40,
+          "premium": 150
+        },
+        "booking_platforms": ["booking.com", "agoda.com", "hostelworld.com"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 2,
+          "medium": 8,
+          "premium": 25
+        },
+        "tipping": false,
+        "tipping_percentage": "Optional 5-10% at tourist restaurants",
+        "dietary_notes": "Limited vegetarian options, fish sauce common"
+      },
+      "cultural_considerations": {
+        "remove_shoes": "At homes and some shops",
+        "dress_modestly": "At temples and pagodas",
+        "bargaining": "Expected at markets",
+        "elderly_respect": "Always defer to older people"
+      },
+      "visa_requirements": {
+        "visa_exemption": "15-45 days for some nationalities",
+        "e-visa": "Available for 90 days",
+        "notes": "note: verify current visa policy, changes frequently"
+      },
+      "emergency": {
+        "police": "113",
+        "ambulance": "115",
+        "fire": "114"
+      },
+      "best_seasons": {
+        "north": "October-April (cool, dry)",
+        "central": "February-May (dry season)",
+        "south": "December-April (dry season)"
+      }
+    },
+    "indonesia": {
+      "currency": "IDR",
+      "language": ["id", "en"],
+      "time_zones": ["Asia/Jakarta", "Asia/Makassar", "Asia/Jayapura"],
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "mixed",
+        "recommended": ["Gojek/Grab", "Domestic flights", "Ferries (between islands)"],
+        "driving_side": "left",
+        "taxi_apps": ["Gojek", "Grab"],
+        "notes": "Motorbike taxis (ojek) common, traffic congested in cities"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "hostel", "villa", "homestay"],
+        "avg_cost_per_night_usd": {
+          "budget": 15,
+          "medium": 60,
+          "premium": 250
+        },
+        "booking_platforms": ["booking.com", "agoda.com", "traveloka.com"]
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 2,
+          "medium": 10,
+          "premium": 35
+        },
+        "tipping": false,
+        "service_charge": "5-10% sometimes included",
+        "dietary_notes": "Rice-based cuisine, halal options widespread"
+      },
+      "cultural_considerations": {
+        "muslim_majority": "Respect Islamic customs, especially during Ramadan",
+        "left_hand": "Use right hand for eating/giving",
+        "remove_shoes": "At homes and mosques",
+        "dress_modestly": "Especially in conservative areas"
+      },
+      "visa_requirements": {
+        "visa_free": "30 days for many nationalities",
+        "visa_on_arrival": "Available for 30 days, extendable",
+        "notes": "note: verify with Indonesian embassy"
+      },
+      "emergency": {
+        "police": "110",
+        "ambulance": "118",
+        "fire": "113"
+      },
+      "best_seasons": {
+        "dry": "April-October (best time)",
+        "wet": "November-March (monsoon, humid)"
+      }
+    },
+    "afghanistan": {
+      "currency": "AFN",
+      "language": ["fa", "ps", "en"],
+      "time_zone": "Asia/Kabul",
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "private_driver",
+        "recommended": ["Private car with driver", "Domestic flights (limited)"],
+        "driving_side": "right",
+        "notes": "note: verify current safety situation before travel. Independent travel not recommended."
+      },
+      "accommodation": {
+        "popular_types": ["guesthouse", "international_hotel"],
+        "avg_cost_per_night_usd": {
+          "budget": 30,
+          "medium": 80,
+          "premium": 200
+        },
+        "notes": "Limited tourism infrastructure, advance booking essential"
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 5,
+          "medium": 15,
+          "premium": 40
+        },
+        "tipping": false,
+        "dietary_notes": "Halal cuisine, rice and bread staples"
+      },
+      "cultural_considerations": {
+        "conservative_dress": "Mandatory, especially for women (headscarf required)",
+        "ramadan": "Eating/drinking in public prohibited during fasting hours",
+        "photography": "Ask permission before photographing people",
+        "gender_separation": "Respect strict gender norms"
+      },
+      "visa_requirements": {
+        "visa": "Required for all nationalities",
+        "notes": "note: verify current visa policy and safety advisory with embassy. Check travel warnings."
+      },
+      "emergency": {
+        "police": "119",
+        "ambulance": "102",
+        "notes": "Limited emergency services. Contact embassy immediately in emergencies."
+      },
+      "travel_advisory": {
+        "status": "HIGH RISK",
+        "notes": "note: verify current security situation with government travel advisories. Consider professional security services. Register with embassy."
+      },
+      "best_seasons": {
+        "spring": "March-May (mild weather)",
+        "fall": "September-November",
+        "avoid": "Winter (harsh, cold), Summer (very hot)"
+      }
+    },
+    "europe": {
+      "currency_variants": ["EUR", "GBP", "CHF", "NOK"],
+      "schengen_area": true,
+      "language": "varies by country",
+      "date_format": "DD/MM/YYYY",
+      "transportation": {
+        "primary": "train_public",
+        "recommended": ["Eurail Pass", "FlixBus", "Budget airlines (Ryanair, EasyJet)"],
+        "driving_side": "right (except UK, Ireland, Malta, Cyprus)",
+        "notes": "Excellent train network, Schengen allows free movement"
+      },
+      "accommodation": {
+        "popular_types": ["hotel", "hostel", "airbnb", "pension"],
+        "avg_cost_per_night_usd": {
+          "budget": 40,
+          "medium": 120,
+          "premium": 350
+        }
+      },
+      "dining": {
+        "avg_meal_cost_usd": {
+          "budget": 15,
+          "medium": 35,
+          "premium": 80
+        },
+        "tipping": "Varies by country, 5-10% typical"
+      },
+      "visa_requirements": {
+        "schengen_visa": "Single visa for 26 countries",
+        "duration": "90 days in 180-day period",
+        "notes": "note: UK has separate visa requirements post-Brexit"
+      },
+      "emergency": {
+        "eu_wide": "112"
+      }
+    }
+  },
+  "adaptation_logic": {
+    "budget_calculation": {
+      "formula": "base_cost × regional_multiplier × currency_conversion",
+      "regional_multipliers": {
+        "japan": 1.3,
+        "usa": 1.4,
+        "india": 0.3,
+        "singapore": 1.2,
+        "vietnam": 0.4,
+        "indonesia": 0.4,
+        "europe_west": 1.5,
+        "europe_east": 0.7
+      }
+    },
+    "activity_pacing": {
+      "conservative_cultures": {
+        "regions": ["afghanistan", "middle_east", "parts_of_india"],
+        "slower_pace": true,
+        "longer_cultural_site_visits": true
+      },
+      "fast_paced": {
+        "regions": ["japan", "singapore", "hong_kong"],
+        "efficient_transit": true,
+        "packed_schedules": true
+      }
+    },
+    "dietary_adaptations": {
+      "vegetarian_friendly": ["india", "singapore", "europe"],
+      "vegetarian_challenging": ["japan", "vietnam", "afghanistan"],
+      "halal_available": ["malaysia", "indonesia", "middle_east", "singapore"],
+      "kosher_available": ["israel", "major_cities_usa_europe"]
+    },
+    "accessibility_considerations": {
+      "wheelchair_accessible": ["usa", "uk", "australia", "japan_major_cities"],
+      "limited_accessibility": ["india", "vietnam", "indonesia_rural"]
+    }
+  },
+  "localization_strings": {
+    "day": {
+      "en": "Day",
+      "ja": "日目",
+      "hi": "दिन",
+      "zh": "天",
+      "es": "Día",
+      "fr": "Jour"
+    },
+    "morning": {
+      "en": "Morning",
+      "ja": "午前",
+      "hi": "सुबह",
+      "zh": "上午",
+      "es": "Mañana",
+      "fr": "Matin"
+    },
+    "afternoon": {
+      "en": "Afternoon",
+      "ja": "午後",
+      "hi": "दोपहर",
+      "zh": "下午",
+      "es": "Tarde",
+      "fr": "Après-midi"
+    },
+    "evening": {
+      "en": "Evening",
+      "ja": "夕方",
+      "hi": "शाम",
+      "zh": "晚上",
+      "es": "Noche",
+      "fr": "Soir"
+    },
+    "budget": {
+      "en": "Budget",
+      "ja": "予算",
+      "hi": "बजट",
+      "zh": "预算",
+      "es": "Presupuesto",
+      "fr": "Budget"
+    },
+    "total": {
+      "en": "Total",
+      "ja": "合計",
+      "hi": "कुल",
+      "zh": "总计",
+      "es": "Total",
+      "fr": "Total"
+    }
+  },
+  "implementation_notes": {
+    "region_detection": "Detect from `primary_destination` or `destinations[0].country`",
+    "fallback": "Use generic template if region not found",
+    "multi_country": "Use hybrid rules when itinerary spans multiple regions",
+    "currency_api": "Fetch live rates from @openexchangerates at generation time",
+    "cultural_warnings": "Always include disclaimer: 'note: verify with official sources'"
+  }
+}
